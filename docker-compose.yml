@@ -1,0 +1,15 @@
+version: '3'
+services:
+    ubicanimal:
+        build: .
+        image: ubicanimalapi
+        ports:
+          - "8080:8080"
+          - "8081:8081"
+        volumes:
+          - ../logs:/Ubicanimal.Api/logs
+        networks:
+          - ubicanimalnet
+networks:
+  ubicanimalnet:
+    external: true
